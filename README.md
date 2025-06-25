@@ -4,7 +4,7 @@
 
 <p align="center"><strong>I am Zoheb Sharif</strong></p>
 
-<p>
+<p align="center">
   I build full-stack apps, machine learning models, and data visualizations. Comfortable across the stack—from crafting elegant frontends to working with APIs and AI systems.
 </p>
 
