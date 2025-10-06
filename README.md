@@ -1,5 +1,5 @@
-<a href="https://github-readme-stats.vercel.app/api/top-langs/?username=sharifzoheb&hide=html,ruby,roff&langs_count=10&layout=compact&theme=dark&hide_border=true&bg_color=0D1117" align="right">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sharifzoheb&hide=html,ruby,roff&langs_count=10&layout=compact&theme=dark&hide_border=true&bg_color=0D1117" height="220px" align="right" alt="Most used languages">
+<a href="https://github-readme-stats.vercel.app/api/top-langs/?username=zohebsharif&hide=html,ruby,roff&langs_count=10&layout=compact&theme=dark&hide_border=true&bg_color=0D1117" align="right">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zohebsharif&hide=html,ruby,roff&langs_count=10&layout=compact&theme=dark&hide_border=true&bg_color=0D1117" height="220px" align="right" alt="Most used languages">
 </a>
 
 <p align="center"><strong>I am Zoheb Sharif</strong></p>
@@ -14,8 +14,15 @@
   <a href="https://linkedin.com/in/zohebsharif">LinkedIn</a>
 </p>
 
-## LeetCode Stats
+## LeetCode
 
+<!-- A pretty card (image) -->
+<p>
+  <img src="https://leetcard.jacoblin.cool/sharifzoheb?ext=contest" alt="LeetCode Card" />
+</p>
+
+<!-- Machine-updated totals (text) -->
+### Stats (auto-updating)
 <!-- LEETCODE:START -->
 Fetching your latest LeetCode stats...
 <!-- LEETCODE:END -->
