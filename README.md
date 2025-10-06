@@ -22,7 +22,5 @@
 </p>
 
 <!-- Machine-updated totals (text) -->
-### Stats (auto-updating)
 <!-- LEETCODE:START -->
-Fetching your latest LeetCode stats...
 <!-- LEETCODE:END -->
