@@ -24,7 +24,7 @@
 <p align="center">
   <img
     src="https://github-readme-stats.vercel.app/api?username=zohebsharif&show_icons=true&count_private=true&theme=react-dark&hide_border=true"
-    alt="GitHub Activity Graph"
+    alt="GitHub Stats"
   />
 </p>
 
