@@ -1,11 +1,22 @@
-<a href="https://github-readme-stats.vercel.app/api/top-langs/?username=zohebsharif&hide=html,ruby,roff&langs_count=10&layout=compact&theme=dark&hide_border=true&bg_color=0D1117" align="right">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zohebsharif&hide=html,ruby,roff&langs_count=10&layout=compact&theme=dark&hide_border=true&bg_color=0D1117" height="220px" align="right" alt="Most used languages">
-</a>
 
-<p align="center"><strong>I am Zoheb Sharif</strong></p>
+<p align="right">
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=zohebsharif&hide=html,ruby,roff&langs_count=10&layout=compact&theme=dark&hide_border=true&bg_color=0D1117"
+      height="220"
+      alt="Most Used Languages"
+    />
+  </a>
+</p>
 
 <p align="center">
-  I build full-stack apps, machine learning models, and data visualizations. Comfortable across the stack. From crafting elegant frontends to working with APIs and AI systems.
+  <strong>I am Zoheb Sharif</strong>
+</p>
+
+<p align="center">
+  I build full-stack applications, machine learning models, and data visualizations.
+  Comfortable across the stack—from crafting elegant frontends to building scalable
+  backends, APIs, cloud infrastructure, and AI-powered systems.
 </p>
 
 <p align="center">
@@ -14,13 +25,19 @@
   <a href="https://linkedin.com/in/zohebsharif">LinkedIn</a>
 </p>
 
+<br>
+
 ## LeetCode
 
-<!-- A pretty card (image) -->
-<p>
-  <img src="https://leetcard.jacoblin.cool/sharifzoheb?ext=contest" alt="LeetCode Card" />
+<p align="center">
+  <img
+    src="https://leetcard.jacoblin.cool/sharifzoheb?ext=contest"
+    width="600"
+    alt="LeetCode Stats"
+  />
 </p>
 
 <!-- Machine-updated totals (text) -->
 <!-- LEETCODE:START -->
 <!-- LEETCODE:END -->
+
