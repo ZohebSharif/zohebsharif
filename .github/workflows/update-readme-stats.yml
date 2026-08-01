@@ -74,7 +74,6 @@ jobs:
               const divider = index === 0 ? "" : `<line x1="26" y1="${y - 13}" x2="469" y2="${y - 13}" stroke="#30363d"/>`;
               return `${divider}<text x="26" y="${y}" fill="#c9d1d9" font-size="14">${label}</text><text x="469" y="${y}" fill="#58a6ff" font-size="14" font-weight="700" text-anchor="end">${Number(value).toLocaleString("en-US")}</text>`;
             }).join("");
-            const updated = now.toISOString().replace("T", " ").replace(/:\d{2}\.\d{3}Z$/, " UTC");
             const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="210" viewBox="0 0 495 210" role="img" aria-labelledby="title desc">
               <title id="title">${displayName}'s GitHub stats</title>
               <desc id="desc">GitHub contribution statistics for ${now.getUTCFullYear()}, updated automatically.</desc>
@@ -83,7 +82,7 @@ jobs:
               <text x="26" y="39" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="18" font-weight="700">${displayName}'s GitHub Stats</text>
               <text x="26" y="61" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12">${now.getUTCFullYear()} contributions • updates every 12 hours</text>
               <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">${rows}</g>
-              <text x="26" y="190" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10">Last updated ${updated}</text>
+              <text x="26" y="190" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10">Private-aware data refreshed automatically</text>
             </svg>`;
 
             fs.mkdirSync("assets", { recursive: true });
