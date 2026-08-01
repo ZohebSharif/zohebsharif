@@ -7,13 +7,7 @@
 </p>
 
 <p align="center">
-  I build full-stack applications. Comfortable across the stack
-  from crafting elegant frontends to building scalable backends,
-  APIs, cloud infrastructure, and AI-powered systems.
-</p>
-
-<p align="center">
-  <i>Currently building things with TypeScript, AI, and cloud infrastructure.</i>
+  <i>Currently building things with agents, AI, and cloud infrastructure.</i>
 </p>
 
 <p align="center">
@@ -24,23 +18,6 @@
 
 <br>
 
-## GitHub Stats
-
-<p align="center">
-  <img
-    src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=zohebsharif&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117"
-    height="180"
-    alt="GitHub Stats"
-  />
-
-  <img
-    src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=zohebsharif&layout=compact&theme=dark&hide_border=true&bg_color=0D1117"
-    height="180"
-    alt="Most Used Languages"
-  />
-</p>
-
-<br>
 
 ## Activity
 
