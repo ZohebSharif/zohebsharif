@@ -1,14 +1,3 @@
-
-<p align="right">
-  <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img
-      src="https://github-readme-stats.vercel.app/api/top-langs/?username=zohebsharif&hide=html,ruby,roff&langs_count=10&layout=compact&theme=dark&hide_border=true&bg_color=0D1117"
-      height="220"
-      alt="Most Used Languages"
-    />
-  </a>
-</p>
-
 <p align="center">
   <strong>I am Zoheb Sharif</strong>
 </p>
