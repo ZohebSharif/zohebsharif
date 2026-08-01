@@ -19,12 +19,23 @@
 <br>
 
 
+## GitHub Stats
+
+<p align="center">
+  <img
+    src="./assets/github-stats.svg"
+    alt="GitHub Stats"
+  />
+</p>
+
+<br>
+
 ## Activity
 
-**<p align="center">
+<p align="center">
   <img
     src="https://github-readme-activity-graph.vercel.app/graph?username=zohebsharif&theme=react-dark&hide_border=true"
-    alt="GitHub Stats"
+    alt="GitHub Activity Graph"
   />
 </p>
 

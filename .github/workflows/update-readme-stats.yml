@@ -1,0 +1,102 @@
+name: Update README Stats
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-readme-stats
+  cancel-in-progress: false
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the profile repository
+        uses: actions/checkout@v4
+
+      - name: Generate private-aware GitHub stats card
+        uses: actions/github-script@v7
+        with:
+          # This makes GraphQL run as the account that owns PAT, so it can read
+          # private-repository contributions that GitHub exposes to that account.
+          github-token: ${{ secrets.PAT }}
+          script: |
+            const fs = require("fs");
+
+            const now = new Date();
+            const yearStart = new Date(Date.UTC(now.getUTCFullYear(), 0, 1));
+            const query = `
+              query UserStats($login: String!, $from: DateTime!, $to: DateTime!) {
+                user(login: $login) {
+                  login
+                  name
+                  contributions: contributionsCollection(from: $from, to: $to) {
+                    totalCommitContributions
+                    totalIssueContributions
+                    totalPullRequestContributions
+                    totalPullRequestReviewContributions
+                    contributionCalendar {
+                      totalContributions
+                    }
+                  }
+                }
+              }
+            `;
+
+            const { user } = await github.graphql(query, {
+              login: context.repo.owner,
+              from: yearStart.toISOString(),
+              to: now.toISOString(),
+            });
+            const stats = user.contributions;
+            const values = [
+              ["Contributions", stats.contributionCalendar.totalContributions],
+              ["Commits", stats.totalCommitContributions],
+              ["Pull requests", stats.totalPullRequestContributions],
+              ["Issues", stats.totalIssueContributions],
+              ["Reviews", stats.totalPullRequestReviewContributions],
+            ];
+            const escapeXml = (value) => String(value)
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;")
+              .replace(/"/g, "&quot;")
+              .replace(/'/g, "&apos;");
+            const displayName = escapeXml(user.name || user.login);
+            const rows = values.map(([label, value], index) => {
+              const y = 91 + index * 20;
+              const divider = index === 0 ? "" : `<line x1="26" y1="${y - 13}" x2="469" y2="${y - 13}" stroke="#30363d"/>`;
+              return `${divider}<text x="26" y="${y}" fill="#c9d1d9" font-size="14">${label}</text><text x="469" y="${y}" fill="#58a6ff" font-size="14" font-weight="700" text-anchor="end">${Number(value).toLocaleString("en-US")}</text>`;
+            }).join("");
+            const updated = now.toISOString().replace("T", " ").replace(/:\d{2}\.\d{3}Z$/, " UTC");
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="210" viewBox="0 0 495 210" role="img" aria-labelledby="title desc">
+              <title id="title">${displayName}'s GitHub stats</title>
+              <desc id="desc">GitHub contribution statistics for ${now.getUTCFullYear()}, updated automatically.</desc>
+              <rect width="495" height="210" rx="10" fill="#20232a"/>
+              <rect x="0.5" y="0.5" width="494" height="209" rx="9.5" fill="none" stroke="#30363d"/>
+              <text x="26" y="39" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="18" font-weight="700">${displayName}'s GitHub Stats</text>
+              <text x="26" y="61" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12">${now.getUTCFullYear()} contributions • updates every 12 hours</text>
+              <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">${rows}</g>
+              <text x="26" y="190" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10">Last updated ${updated}</text>
+            </svg>`;
+
+            fs.mkdirSync("assets", { recursive: true });
+            fs.writeFileSync("assets/github-stats.svg", svg.trim() + "\n");
+
+      - name: Commit refreshed stats card
+        run: |
+          if git diff --quiet -- assets/github-stats.svg; then
+            echo "Stats card is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/github-stats.svg
+          git commit -m "chore: update GitHub stats"
+          git push
