@@ -18,18 +18,6 @@
 
 <br>
 
-
-## GitHub Stats
-
-<p align="center">
-  <img
-    src="./assets/github-stats.svg"
-    alt="GitHub Stats"
-  />
-</p>
-
-<br>
-
 ## Activity
 
 <p align="center">
