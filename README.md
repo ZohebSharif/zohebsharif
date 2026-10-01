@@ -21,10 +21,13 @@
 ## Activity
 
 <p align="center">
-  <img
-    src="https://github-readme-activity-graph.vercel.app/graph?username=zohebsharif&theme=react-dark&hide_border=true"
-    alt="GitHub Activity Graph"
-  />
+  <a href="https://github.com/zohebsharif">
+    <img
+      src="https://ghchart.rshah.org/61dafb/zohebsharif"
+      alt="Zoheb Sharif's GitHub contribution calendar"
+      width="100%"
+    />
+  </a>
 </p>
 
 <br>
