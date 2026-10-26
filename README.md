@@ -18,20 +18,6 @@
 
 <br>
 
-## Activity
-
-<p align="center">
-  <a href="https://github.com/zohebsharif">
-    <img
-      src="https://ghchart.rshah.org/61dafb/zohebsharif"
-      alt="Zoheb Sharif's GitHub contribution calendar"
-      width="100%"
-    />
-  </a>
-</p>
-
-<br>
-
 ## LeetCode
 
 <p align="center">
